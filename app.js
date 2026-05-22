@@ -47,19 +47,13 @@ userInput.addEventListener('keyup', function() {
 
   let lowerCaseInput = userInput.value.toLowerCase();
 
+      const filtered = daedricArtifacts.filter(artifact => {
 
-  
-      daedricArtifacts.forEach(artifact => {
-    const text = artifact.name.toLowerCase();
-    // Show item if it includes the search term, otherwise hide it
-    if (text.includes(lowerCaseInput)) {
-      // if the text matches something render the one card that matches
-      renderCollection([artifact]) 
-    } else {
-      renderCollection([])
-    }
+        return artifact.name.toLowerCase().includes(lowerCaseInput);
+    
+    })
+    renderCollection(filtered);
   });
-})
 
 
 
